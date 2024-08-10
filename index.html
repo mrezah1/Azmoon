@@ -1,0 +1,2304 @@
+<!-- saved from url=(0069)http://tizhooshan.kanoon.shop/Student/Exam/Azmoon/14030503?key=qEs0f9 -->
+<html lang="en" data-darkreader-proxy-injected="true">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آزمون 14030503</title>
+    <link rel="stylesheet" href="./assets/bootsrap.css" />
+    <link rel="stylesheet" href="./assets/IRAN_Sans/font-min.css" />
+
+    <style>
+      button {
+        font-size: 12px !important;
+      }
+
+      .Selected {
+        opacity: 1;
+      }
+
+      .NonSelect {
+        opacity: 0.3;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        font-family: "iranSans";
+      }
+
+      div,
+      span,
+      label {
+        font-family: "iranSans" !important;
+      }
+
+      .red {
+        color: red;
+        font-weight: bold;
+      }
+
+      .Box {
+        background-color: white !important;
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: fit-content;
+      }
+
+      .box * {
+        padding: 5px;
+      }
+      .border-gray {
+        border-color: #ccc !important;
+      }
+
+      .blue {
+        color: blue;
+        font-weight: bold;
+      }
+
+      .titr {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        background-color: deepskyblue;
+      }
+
+      .Btn-Default {
+        color: white;
+        background-color: lightgray;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .Btn-Default:hover {
+        background-color: green;
+        color: white;
+      }
+
+      .slider {
+        width: 100%;
+        height: 144px;
+        position: relative;
+        margin: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
+
+      .slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .slider .slide {
+        display: flex;
+        position: absolute;
+        left: 0;
+        transition: 0.3s left ease-in-out;
+      }
+
+      .slider .item {
+        margin-right: 10px;
+      }
+
+      .ctrl {
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      .ctrl-btn {
+        min-width: 26px;
+        background: #ffa6a6;
+        color: white;
+        border: none;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        position: absolute;
+        top: 63%;
+        margin-top: -27.5px;
+        border-radius: 50%;
+      }
+
+      .ctrl-btn.pro-prev {
+        left: 0;
+      }
+
+      .ctrl-btn.pro-next {
+        right: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid py-4">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-11 col-sm-10 col-md-8 col-lg-5">
+          <section id="info">
+            <div class="alert alert-info">
+              <h5 class="red">دانش آموز گرامی توجه کنید</h5>
+              <div>شما به دو صورت میتوانید به سوالات آزمون پاسخ دهید</div>
+              <div>
+                <span class="red">روش اول: </span>
+                پاسخ به سوالات به صورت تک به تک که تصویر هر سوال برای شما نمایش
+                داده شده است و پس از پاسخ به هر سوال با کلیک بر سوال بعدیُ
+                سوالات بعدی نمایش داده میشود.
+              </div>
+              <div>
+                <span class="red">روش دوم: </span>
+                دانلود سوالات آزمون و وارد کردند گزینه های پاسخ در قسمت پاسخبرگ
+                آزمون البته شما میتوانید از هر دو روش نیز استفاده کنید.
+              </div>
+            </div>
+
+            <div>
+              <label> زمان کل ازمون:<span class="red"> 10 دقیقه</span> </label>
+            </div>
+            <div>
+              <label>
+                زمان گذشته از آزمون:<span class="red">
+                  <span id="Min">6</span> دقیقه</span
+                >
+              </label>
+            </div>
+            <div class="progress position-relative mt-4">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                id="MinProgress"
+                style="width: 60%"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="300"
+              ></div>
+              <div
+                class="d-flex position-absolute h-100 flex-row-reverse w-100"
+                id="progress-slice"
+                style="z-index: 9999"
+              >
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+                <div class="border-end border-white border-gray w-100"></div>
+              </div>
+            </div>
+          </section>
+          <br />
+          <section id="tab-items">
+            <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-home-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-home"
+                  aria-selected="true"
+                >
+                  روش اول
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-profile-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-profile"
+                  aria-selected="false"
+                >
+                  روش دوم
+                </button>
+              </li>
+            </ul>
+          </section>
+          <section id="tab-content">
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-home"
+                role="tabpanel"
+                aria-labelledby="pills-home-tab"
+              >
+                <section id="plan-1">
+                  <div class="alert text-center titr" role="alert">
+                    پاسخ به سوالات به صورت تک به تک
+                  </div>
+                  <div style="display: flex; justify-content: space-between">
+                    <div>سوال:<span class="blue" id="QuestionNo">1</span></div>
+                    <div>درس:<span class="blue"> هوش ریاضی و منطقی </span></div>
+                  </div>
+                  <div
+                    class="alert alert-default"
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      background-color: rgb(231, 231, 231);
+                      border: 1px solid cyan;
+                      --darkreader-inline-bgcolor: #26292a;
+                      --darkreader-inline-border-top: #00b3b3;
+                      --darkreader-inline-border-right: #00b3b3;
+                      --darkreader-inline-border-bottom: #00b3b3;
+                      --darkreader-inline-border-left: #00b3b3;
+                    "
+                    data-darkreader-inline-bgcolor=""
+                    data-darkreader-inline-border-top=""
+                    data-darkreader-inline-border-right=""
+                    data-darkreader-inline-border-bottom=""
+                    data-darkreader-inline-border-left=""
+                  >
+                    <div>استفاده از تکنیک ضربدر و منفی</div>
+                    <div style="display: flex" class="gap-2">
+                      <button
+                        class="bg-danger text-center text-danger Select"
+                        id="IsZarbdar"
+                        style="
+                          width: 70px;
+                          border: 0px;
+                          --darkreader-inline-border-top: 0px;
+                          --darkreader-inline-border-right: 0px;
+                          --darkreader-inline-border-bottom: 0px;
+                          --darkreader-inline-border-left: 0px;
+                        "
+                        data-darkreader-inline-border-top=""
+                        data-darkreader-inline-border-right=""
+                        data-darkreader-inline-border-bottom=""
+                        data-darkreader-inline-border-left=""
+                      >
+                        <!-- <i class="btn-close"></i> -->
+                      </button>
+                      <button
+                        class="bg-warning text-warning NonSelect"
+                        id="IsManfi"
+                        style="
+                          width: 70px;
+                          border: 0px;
+                          --darkreader-inline-border-top: 0px;
+                          --darkreader-inline-border-right: 0px;
+                          --darkreader-inline-border-bottom: 0px;
+                          --darkreader-inline-border-left: 0px;
+                        "
+                        data-darkreader-inline-border-top=""
+                        data-darkreader-inline-border-right=""
+                        data-darkreader-inline-border-bottom=""
+                        data-darkreader-inline-border-left=""
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div>
+                        <img
+                          src="http://tizhooshan.kanoon.shop/Files/Question/System.Collections.Generic.List%601[System.Int32]_System.Collections.Generic.List%601[System.Int32]_System.Collections.Generic.List%601[System.Int32]_14030503.png"
+                          alt="آزمون"
+                          id="QuestionImage"
+                          srcset=""
+                          style="width: 550px; max-height: 300px"
+                          class="img-fluid"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div
+                    style="display: flex; justify-content: center"
+                    class="gap-4"
+                  >
+                    <button
+                      type="button"
+                      class="btn SetAnswer Btn-Default"
+                      data-question_num="1"
+                    >
+                      گزینه ۱
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm SetAnswer Btn-Success"
+                      data-question_num="2"
+                    >
+                      گزینه ۲
+                    </button>
+                    <button
+                      type="button"
+                      class="btn SetAnswer Btn-Default"
+                      data-question_num="3"
+                    >
+                      گزینه ۳
+                    </button>
+                    <button
+                      type="button"
+                      class="btn SetAnswer Btn-Default"
+                      data-question_num="4"
+                    >
+                      گزینه ۴
+                    </button>
+                  </div>
+                  <br />
+                  <div
+                    style="display: flex; justify-content: center"
+                    class="gap-4"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      id="NextQuestion"
+                    >
+                      سوال بعدی
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      id="PreQuestion"
+                      style="
+                        background-color: white;
+                        --darkreader-inline-bgcolor: #181a1b;
+                      "
+                      data-darkreader-inline-bgcolor=""
+                    >
+                      سوال قبلی
+                    </button>
+                  </div>
+                  <br />
+
+                  <div
+                    style="
+                      background-color: rgb(231, 231, 231);
+                      padding: 5px;
+                      --darkreader-inline-bgcolor: #26292a;
+                    "
+                    data-darkreader-inline-bgcolor=""
+                  >
+                    <div style="margin-bottom: 5px">
+                      وضعیت پاسخگویی به سوالات:
+                    </div>
+                    <div class="slider" id="slider">
+                      <div class="slide" id="slide">
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="1">1</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">2</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: red;
+                              color: red;
+                              --darkreader-inline-bgcolor: #cc0000;
+                              --darkreader-inline-color: #ff1a1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="2">2</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: red;
+                              color: red;
+                              --darkreader-inline-bgcolor: #cc0000;
+                              --darkreader-inline-color: #ff1a1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="3">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: white;
+                              color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                              --darkreader-inline-color: #e8e6e3;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="4">4</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: yellow;
+                              color: yellow;
+                              --darkreader-inline-bgcolor: #999900;
+                              --darkreader-inline-color: #ffff1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="5">5</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">2</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: yellow;
+                              color: yellow;
+                              --darkreader-inline-bgcolor: #999900;
+                              --darkreader-inline-color: #ffff1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="6">6</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: yellow;
+                              color: yellow;
+                              --darkreader-inline-bgcolor: #999900;
+                              --darkreader-inline-color: #ffff1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="7">7</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: red;
+                              color: red;
+                              --darkreader-inline-bgcolor: #cc0000;
+                              --darkreader-inline-color: #ff1a1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="8">8</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">3</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: yellow;
+                              color: yellow;
+                              --darkreader-inline-bgcolor: #999900;
+                              --darkreader-inline-color: #ffff1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="9">9</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success"></span>
+                          </div>
+                          <div
+                            style="
+                              background-color: red;
+                              color: red;
+                              --darkreader-inline-bgcolor: #cc0000;
+                              --darkreader-inline-color: #ff1a1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                        <div class="Box item">
+                          <div
+                            style="
+                              background-color: white;
+                              --darkreader-inline-bgcolor: #181a1b;
+                            "
+                            class="ShowAnswer"
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            سوال
+                            <span class="blue" data-question_num="10">10</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: rgb(231, 231, 231);
+                              --darkreader-inline-bgcolor: #26292a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                          >
+                            گزینه:<span class="text-success">1</span>
+                          </div>
+                          <div
+                            style="
+                              background-color: red;
+                              color: red;
+                              --darkreader-inline-bgcolor: #cc0000;
+                              --darkreader-inline-color: #ff1a1a;
+                            "
+                            data-darkreader-inline-bgcolor=""
+                            data-darkreader-inline-color=""
+                          >
+                            -
+                          </div>
+                        </div>
+                      </div>
+                      <button class="ctrl-btn pro-prev">&gt;</button>
+                      <button class="ctrl-btn pro-next">&lt;</button>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="alert text-center titr" role="alert">
+                    دانلود سوالات و پر کردن پاسخبرگ آزمون
+                  </div>
+                  <br />
+
+                  <div
+                    style="
+                      background-color: rgb(231, 231, 231);
+                      border: 1px solid cyan;
+                      text-align: center;
+                      padding: 10px;
+                      --darkreader-inline-bgcolor: #26292a;
+                      --darkreader-inline-border-top: #00b3b3;
+                      --darkreader-inline-border-right: #00b3b3;
+                      --darkreader-inline-border-bottom: #00b3b3;
+                      --darkreader-inline-border-left: #00b3b3;
+                    "
+                    data-darkreader-inline-bgcolor=""
+                    data-darkreader-inline-border-top=""
+                    data-darkreader-inline-border-right=""
+                    data-darkreader-inline-border-bottom=""
+                    data-darkreader-inline-border-left=""
+                  >
+                    دانلود سوالات آزمون:<span class="text-info">14030503</span>
+                  </div>
+                  <div
+                    style="
+                      background-color: rgb(231, 231, 231);
+                      border: 1px solid cyan;
+                      text-align: center;
+                      padding: 10px;
+                      --darkreader-inline-bgcolor: #26292a;
+                      --darkreader-inline-border-top: #00b3b3;
+                      --darkreader-inline-border-right: #00b3b3;
+                      --darkreader-inline-border-bottom: #00b3b3;
+                      --darkreader-inline-border-left: #00b3b3;
+                    "
+                    data-darkreader-inline-bgcolor=""
+                    data-darkreader-inline-border-top=""
+                    data-darkreader-inline-border-right=""
+                    data-darkreader-inline-border-bottom=""
+                    data-darkreader-inline-border-left=""
+                  >
+                    <a
+                      style="
+                        text-decoration: none;
+                        font-weight: bold;
+                        color: blue;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      href="https://www.kanoon.ir/Downloads/Article/989aa015-a587-4c28-a4b6-981b94199fb3"
+                      data-darkreader-inline-color=""
+                      >دانلود سوالات تیزهوشان ششم(کلیک)</a
+                    >
+                  </div>
+                </section>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-profile"
+                role="tabpanel"
+                aria-labelledby="pills-profile-tab"
+              >
+                <section id="plan-2">
+                  <div>
+                    <h5 style="font-weight: bold">پاسخبرگ آزمون</h5>
+                    پس از دانلود سوالات ، برای هر سوال پاسخ صحیح خود را در
+                    پاسخبرگ آزمون وارد کنید در وارد کردند گزینه صحیح دقت لازم را
+                    داشته باشید و پس از حل هر سوال پاسخ را در قسمت پاسخ برگ وارد
+                    کنید
+                  </div>
+                  <br />
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert text-center titr"
+                      style="padding: 0px 10px; border-radius: 5px"
+                    >
+                      سوال
+                    </div>
+                    <div
+                      class="alert text-center titr"
+                      style="padding: 0px 42px; border-radius: 5px"
+                    >
+                      بر روی گزینه پاسخ کلیک کنید
+                    </div>
+                    <div
+                      class="alert text-center titr"
+                      style="
+                        padding: 5px 2px;
+                        border-radius: 5px;
+                        font-size: 9px;
+                      "
+                    >
+                      تکنیک ضربدر و منفی
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      1
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="1"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="2"
+                        data-question_num="1"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="3"
+                        data-question_num="1"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="1"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Danger btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      2
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="2"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="2"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="2"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="2"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Danger btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      3
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="3"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="3"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="3"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="3"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      4
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="4"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="4"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="4"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="4"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Warning btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      5
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="5"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="2"
+                        data-question_num="5"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="3"
+                        data-question_num="5"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="5"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Warning btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      6
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="6"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="6"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="6"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="6"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Warning btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      7
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="7"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="7"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="7"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="7"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Danger btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      8
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="8"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="8"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="3"
+                        data-question_num="8"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="8"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Warning btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      9
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="1"
+                        data-question_num="9"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="9"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="3"
+                        data-question_num="9"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="9"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Danger btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      margin-bottom: -10px;
+                    "
+                  >
+                    <div
+                      class="alert alert-info text-center"
+                      style="
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                        color: blue;
+                        font-size: 14px;
+                        width: 50px;
+                        --darkreader-inline-color: #337dff;
+                      "
+                      data-darkreader-inline-color=""
+                    >
+                      10
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Success btn-sm"
+                        data-key="1"
+                        data-question_num="10"
+                      >
+                        گزینه ۱
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="2"
+                        data-question_num="10"
+                      >
+                        گزینه ۲
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="3"
+                        data-question_num="10"
+                      >
+                        گزینه ۳
+                      </button>
+                      <button
+                        type="button"
+                        class="btn SetAnswer2 Btn-Default btn-sm"
+                        data-key="4"
+                        data-question_num="10"
+                      >
+                        گزینه ۴
+                      </button>
+                    </div>
+                    <div
+                      class="gap-2"
+                      style="
+                        align-items: baseline;
+                        display: flex;
+                        white-space: nowrap;
+                      "
+                    >
+                      <button
+                        type="button"
+                        class="btn Btn-Danger btn-sm IsZarbdar"
+                        data-cs="IsZarbdar"
+                      >
+                        <i class="btn-close"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn Btn-Default btn-sm IsManfi"
+                        data-cs="IsManfi"
+                      >
+                        <i>-</i>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+          <br />
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+          <div class="col"></div>
+          <div class="col">
+            <a
+              href="http://tizhooshan.kanoon.shop/Student/Exam/Index/14030503?key=qEs0f9"
+              style="width: inherit"
+              class="btn btn-info"
+              >پایان آزمون</a
+            >
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/Jquery.js.download"></script>
+    <script src="./assets/boootsrap.js.download"></script>
+    <script src="./assets/myJs.js.download"></script>
+    <script>
+      function startTimer(duration, display) {
+        var timer = duration,
+          minutes,
+          seconds;
+        setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? minutes : minutes;
+          // seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.textContent = 10 - minutes; //+ ":" + seconds;
+          let progressPercentage = display.textContent * 100;
+
+          $("#MinProgress").css("width", progressPercentage / 10 + "%");
+          $("#progress-slice div").each(function (index) {
+            console.log(index, minutes);
+            if (index + 1 > minutes) $(this).removeClass("border-gray");
+          });
+          if (--timer < 0) {
+            timer = duration;
+            alert("وقت آزمون شما به پایان رسیده است");
+            return (window.location.href =
+              "/Student/Exam/Index/14030503?key=qEs0f9");
+          }
+        }, 1000);
+      }
+
+      window.onload = function () {
+        $("#MinProgress").attr("aria-valuemax", 300);
+        var fiveMinutes = 60 * 10,
+          display = document.querySelector("#Min");
+        startTimer(fiveMinutes, display);
+      };
+      let TestDate = "14030503";
+      let QuestioNO = 1;
+
+      $("#IsZarbdar,#IsManfi").on("click", function (e) {
+        debugger;
+        var $itemId = $(e.currentTarget).attr("id");
+        if ($itemId == "IsZarbdar") {
+          $("#IsManfi").removeClass("Selected");
+          $("#IsManfi").addClass("NonSelect");
+        } else {
+          $("#IsZarbdar").removeClass("Selected");
+          $("#IsZarbdar").addClass("NonSelect");
+        }
+        if ($(this).hasClass("Selected")) {
+          $(this).removeClass("Selected");
+          $(this).addClass("NonSelect");
+        } else {
+          $(this).addClass("Selected");
+          $(this).removeClass("NonSelect");
+        }
+      });
+
+      $(".IsZarbdar,.IsManfi").on("click", function (e) {
+        debugger;
+
+        var $itemId = $(e.currentTarget).data("cs");
+
+        if ($itemId == "IsZarbdar") {
+          if ($(e.currentTarget).hasClass("Btn-Danger")) {
+            $(e.currentTarget).removeClass("Btn-Danger");
+            $(e.currentTarget).addClass("Btn-Default");
+          } else {
+            $(e.currentTarget).addClass("Btn-Danger");
+            $(e.currentTarget).removeClass("Btn-Default");
+          }
+          $(e.currentTarget).next().removeClass("Btn-Warning");
+          $(e.currentTarget).next().addClass("Btn-Default");
+        } else if ($itemId == "IsManfi") {
+          if ($(e.currentTarget).hasClass("Btn-Warning")) {
+            $(e.currentTarget).removeClass("Btn-Warning");
+            $(e.currentTarget).addClass("Btn-Default");
+          } else {
+            $(e.currentTarget).addClass("Btn-Warning");
+            $(e.currentTarget).removeClass("Btn-Default");
+          }
+
+          $(e.currentTarget).siblings().removeClass("Btn-Danger")[0];
+          $(e.currentTarget).next().addClass("Btn-Default");
+        }
+      });
+      $("#NextQuestion,#PreQuestion").on("click", function (e) {
+        var $itemId = $(e.currentTarget).attr("id");
+        $(".SetAnswer").removeClass("Btn-success");
+        $(".SetAnswer").addClass("Btn-Default");
+        $("#IsManfi").removeClass("Selected");
+        $("#IsZarbdar").removeClass("Selected");
+        $.ajax({
+          type: "GET",
+          url: "/Student/Exam/ChangeQuestion",
+          data: {
+            TestDate: TestDate,
+            QuestionNO: QuestioNO,
+            type: $itemId == "NextQuestion" ? 1 : 0,
+          },
+        }).done(function (res) {
+          debugger;
+          if (res.data == "") {
+            alert(res.MSG);
+          } else {
+            QuestioNO = res.data.QuestionNO;
+            $("#QuestionNo").text(QuestioNO);
+            $("#QuestionImage").attr("src", res.data.QuestionPicture);
+            if (
+              res.data.StudentAnswered != "" &&
+              res.data.StudentAnswered != null
+            ) {
+              var AnswerBtn = $(
+                '.SetAnswer[data-question_num="' +
+                  res.data.StudentAnswered +
+                  '"]'
+              );
+              AnswerBtn.removeClass("Btn-Default");
+              AnswerBtn.addClass("Btn-success");
+            }
+            if (res.data.IsZarbdar != null && res.data.IsZarbdar == true) {
+              $("#IsZarbdar").removeClass("NonSelect");
+              $("#IsZarbdar").addClass("Select");
+            } else {
+              $("#IsZarbdar").removeClass("Select");
+              $("#IsZarbdar").addClass("NonSelect");
+            }
+
+            if (res.data.IsManfi != null && res.data.IsManfi == true) {
+              $("#IsManfi").removeClass("NonSelect");
+              $("#IsManfi").addClass("Select");
+            } else {
+              $("#IsManfi").removeClass("Select");
+              $("#IsManfi").addClass("NonSelect");
+            }
+          }
+        });
+      });
+
+      $(".SetAnswer").on("click", function (e) {
+        var $item = $(e.currentTarget);
+        var key = $item.data("question_num");
+        var IsManfi = $("#IsManfi").hasClass("Selected") ? true : false;
+        var IsZarbdar = $("#IsZarbdar").hasClass("Selected") ? true : false;
+
+        $.ajax({
+          type: "POST",
+          url: "/Student/Exam/SetAnswer",
+          data: {
+            Question: QuestioNO,
+            Key: key,
+            IsManfi: IsManfi,
+            IsZarbdar: IsZarbdar,
+            TestDate,
+          },
+        }).done(function (res) {
+          debugger;
+          if (res != "OK") {
+            alert(res);
+          }
+          $(
+            '.SetAnswer[data-question_num="' + $item.data("question_num") + '"]'
+          ).addClass("Selected");
+          $(".SetAnswer").removeClass("Btn-Success");
+          $(".SetAnswer").addClass("Btn-Default");
+          $(
+            '.SetAnswer[data-question_num="' + $item.data("question_num") + '"]'
+          ).addClass("Btn-Success");
+          $(
+            '.SetAnswer[data-question_num="' + $item.data("question_num") + '"]'
+          ).removeClass("Btn-Default");
+
+          $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+            .parent("div")
+            .next()
+            .children()
+            .text(key);
+
+          if (IsZarbdar) {
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Warning");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Default");
+
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Default");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Danger");
+
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: red; color: red;");
+          } else if (IsManfi) {
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Danger");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Default");
+
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Default");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Warning");
+
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: yellow; color: yellow;");
+          } else {
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: white; color: white;");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Danger");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Default");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Default");
+            $(
+              '.SetAnswer2[data-question_num="' +
+                QuestioNO +
+                '"][data-key="' +
+                key +
+                '"]'
+            )
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Warning");
+          }
+          /*----------------------------------------*/
+          $('.SetAnswer2[data-question_num="' + QuestioNO + '"]').removeClass(
+            "Btn-Success"
+          );
+          $('.SetAnswer2[data-question_num="' + QuestioNO + '"]').addClass(
+            "Btn-Default"
+          );
+          $(
+            '.SetAnswer2[data-question_num="' +
+              QuestioNO +
+              '"][data-key="' +
+              key +
+              '"]'
+          ).addClass("Btn-Success");
+          $(
+            '.SetAnswer2[data-question_num="' +
+              QuestioNO +
+              '"][data-key="' +
+              key +
+              '"]'
+          ).removeClass("Btn-Default");
+        });
+      });
+
+      $(".SetAnswer2").on("click", function (e) {
+        debugger;
+        var $item = $(e.currentTarget);
+        var question = $item.data("question_num");
+        var Key = $item.data("key");
+        var IsZarbdar = $item.parent().next().children().hasClass("Btn-Danger");
+        var IsManfi = $item.parent().next().children().hasClass("Btn-Warning");
+        $.ajax({
+          type: "POST",
+          url: "/Student/Exam/SetAnswer2",
+          data: {
+            Question: question,
+            Key: Key,
+            IsManfi: IsManfi,
+            IsZarbdar: IsZarbdar,
+            TestDate,
+          },
+        }).done(function (res) {
+          debugger;
+          if (res != "OK") {
+            alert(res);
+          }
+          $(
+            '.SetAnswer2[data-question_num="' +
+              $item.data("question_num") +
+              '"]'
+          ).removeClass("Btn-Success");
+          $(
+            '.SetAnswer2[data-question_num="' +
+              $item.data("question_num") +
+              '"]'
+          ).addClass("Btn-Default");
+          $(
+            '.SetAnswer2[data-question_num="' +
+              $item.data("question_num") +
+              '"][data-key="' +
+              Key +
+              '"]'
+          ).addClass("Btn-Success");
+          $(
+            '.SetAnswer2[data-question_num="' +
+              $item.data("question_num") +
+              '"][data-key="' +
+              Key +
+              '"]'
+          ).removeClass("Btn-Default");
+          //-------------------------------------------------------------------
+          $('.ShowAnswer span[data-question_num="' + question + '"]')
+            .parent("div")
+            .next()
+            .children()
+            .text(Key);
+
+          if (IsZarbdar) {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: red; color: red;");
+          } else if (IsManfi) {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: yellow; color: yellow;");
+          } else {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: white; color: white;");
+          }
+        });
+      });
+
+      $("#IsZarbdar,#IsManfi").on("click", function (e) {
+        var $item = $(e.currentTarget);
+        var IsManfi = $("#IsManfi").hasClass("Selected") ? true : false;
+        var IsZarbdar = $("#IsZarbdar").hasClass("Selected") ? true : false;
+        $.ajax({
+          type: "POST",
+          url: "/Student/Exam/SetManfiZarbdar",
+          data: {
+            Question: QuestioNO,
+            IsManfi: IsManfi,
+            IsZarbdar: IsZarbdar,
+            TestDate,
+          },
+        }).done(function (res) {
+          if (IsZarbdar) {
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Warning");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Default");
+
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Default");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Danger");
+
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: red; color: red;");
+          } else if (IsManfi) {
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Danger");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Default");
+
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Default");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Warning");
+
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: yellow; color: yellow;");
+          } else {
+            $('.ShowAnswer span[data-question_num="' + QuestioNO + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: white; color: white;");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .removeClass("Btn-Danger");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsZarbdar")
+              .addClass("Btn-Default");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .addClass("Btn-Default");
+            $('.SetAnswer2[data-question_num="' + QuestioNO + '"]')
+              .parent()
+              .next()
+              .children(".IsManfi")
+              .removeClass("Btn-Warning");
+          }
+        });
+      });
+
+      $(".IsZarbdar,.IsManfi").on("click", function (e) {
+        var $item = $(e.currentTarget);
+        var question = $item
+          .parent()
+          .siblings()
+          .children()
+          .data("question_num");
+        var IsZarbdar = $item.parent().children().hasClass("Btn-Danger");
+        var IsManfi = $item.parent().children().hasClass("Btn-Warning");
+        $.ajax({
+          type: "POST",
+          url: "/Student/Exam/SetManfiZarbdar",
+          data: {
+            Question: question,
+            IsManfi: IsManfi,
+            IsZarbdar: IsZarbdar,
+            TestDate,
+          },
+        }).done(function (res) {
+          debugger;
+          if (res != "OK") {
+            alert(res);
+          }
+          if (IsZarbdar) {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: red; color: red;");
+          } else if (IsManfi) {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: yellow; color: yellow;");
+          } else {
+            $('.ShowAnswer span[data-question_num="' + question + '"]')
+              .parent("div")
+              .next()
+              .next()
+              .attr("style", "background-color: white; color: white;");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

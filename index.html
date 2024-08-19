@@ -50,8 +50,25 @@
       .box * {
         padding: 5px;
       }
+      .unset {
+        all: unset;
+      }
+      .border-bottom-2 {
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 12px;
+        transition: 0.2s all;
+        opacity: 0.55;
+      }
+      button.active {
+        opacity: 1 !important;
+        color: #0d6efd;
+        border-color: #0d6efd;
+      }
       .border-gray {
         border-color: #ccc !important;
+      }
+      #progress-slice div {
+        transition: 0.3s all;
       }
 
       .blue {
@@ -94,12 +111,13 @@
       .slider .slide {
         display: flex;
         position: absolute;
-        left: 0;
+        left: -30px;
         transition: 0.3s left ease-in-out;
       }
 
       .slider .item {
         margin-right: 10px;
+        width: 11.8%;
       }
 
       .ctrl {
@@ -109,25 +127,31 @@
 
       .ctrl-btn {
         min-width: 26px;
-        background: #ffa6a6;
         color: white;
         border: none;
         font-weight: 600;
+        font-size: 13px !important;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
         cursor: pointer;
+        padding-top: 2px;
         outline: none;
-        position: absolute;
-        top: 63%;
-        margin-top: -27.5px;
+        /* position: absolute; */
+        top: 53%;
+        /* margin-top: -27.5px; */
         border-radius: 50%;
       }
 
       .ctrl-btn.pro-prev {
-        left: 0;
+        left: -10px;
       }
 
       .ctrl-btn.pro-next {
-        right: 0;
+        right: -10px;
       }
     </style>
   </head>
@@ -135,7 +159,7 @@
   <body>
     <div class="container-fluid py-4">
       <div class="row justify-content-center align-items-center">
-        <div class="col-11 col-sm-10 col-md-8 col-lg-5">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5">
           <section id="info">
             <div class="alert alert-info">
               <h5 class="red">دانش آموز گرامی توجه کنید</h5>
@@ -154,49 +178,50 @@
             </div>
 
             <div>
-              <label> زمان کل ازمون:<span class="red"> 10 دقیقه</span> </label>
-            </div>
-            <div>
-              <label>
-                زمان گذشته از آزمون:<span class="red">
-                  <span id="Min">6</span> دقیقه</span
-                >
+              <label class="d-flex">
+                زمان کل آزمون :
+                <p class="px-2">
+                  <span id="exam-time" class="red"></span>
+                  <span class="red">دقیقه</span>
+                </p>
               </label>
             </div>
-            <div class="progress position-relative mt-4">
+            <div>
+              <label class="d-flex">
+                زمان گذشته از آزمون :
+                <p class="px-2">
+                  <span id="min" class="red"></span>
+                  <span id="min-lbl" class="red"></span>
+                </p>
+              </label>
+            </div>
+            <div class="progress position-relative mt-2" style="height: 1.3rem">
               <div
                 class="progress-bar bg-success"
                 role="progressbar"
                 id="MinProgress"
-                style="width: 60%"
+                style="width: 0%"
                 aria-valuenow="0"
                 aria-valuemin="0"
                 aria-valuemax="300"
               ></div>
               <div
-                class="d-flex position-absolute h-100 flex-row-reverse w-100"
+                class="d-flex position-absolute h-100 w-100"
                 id="progress-slice"
                 style="z-index: 9999"
-              >
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-                <div class="border-end border-white border-gray w-100"></div>
-              </div>
+              ></div>
             </div>
           </section>
           <br />
           <section id="tab-items">
-            <ul class="nav nav-pills my-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
+            <ul
+              class="nav d-flex flex-nowrap nav-pills my-3"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item w-100" role="presentation">
                 <button
-                  class="nav-link active"
+                  class="unset w-100 text-center active text-lg fs-6 border-bottom-2"
                   id="pills-home-tab"
                   data-bs-toggle="pill"
                   data-bs-target="#pills-home"
@@ -208,9 +233,9 @@
                   روش اول
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <li class="nav-item w-100" role="presentation">
                 <button
-                  class="nav-link"
+                  class="unset w-100 text-center text-lg fs-6 border-bottom-2"
                   id="pills-profile-tab"
                   data-bs-toggle="pill"
                   data-bs-target="#pills-profile"
@@ -233,7 +258,7 @@
                 aria-labelledby="pills-home-tab"
               >
                 <section id="plan-1">
-                  <div class="alert text-center titr" role="alert">
+                  <div class="alert alert-info text-center" role="alert">
                     پاسخ به سوالات به صورت تک به تک
                   </div>
                   <div style="display: flex; justify-content: space-between">
@@ -241,12 +266,10 @@
                     <div>درس:<span class="blue"> هوش ریاضی و منطقی </span></div>
                   </div>
                   <div
-                    class="alert alert-default"
+                    class="alert alert-primary mt-3"
                     style="
                       display: flex;
                       justify-content: space-between;
-                      background-color: rgb(231, 231, 231);
-                      border: 1px solid cyan;
                       --darkreader-inline-bgcolor: #26292a;
                       --darkreader-inline-border-top: #00b3b3;
                       --darkreader-inline-border-right: #00b3b3;
@@ -259,13 +282,15 @@
                     data-darkreader-inline-border-bottom=""
                     data-darkreader-inline-border-left=""
                   >
-                    <div>استفاده از تکنیک ضربدر و منفی</div>
+                    <div style="font-size: 14px">
+                      استفاده از تکنیک ضربدر و منفی
+                    </div>
                     <div style="display: flex" class="gap-2">
                       <button
                         class="bg-danger text-center text-danger Select"
                         id="IsZarbdar"
                         style="
-                          width: 70px;
+                          width: 50px;
                           border: 0px;
                           --darkreader-inline-border-top: 0px;
                           --darkreader-inline-border-right: 0px;
@@ -283,7 +308,7 @@
                         class="bg-warning text-warning NonSelect"
                         id="IsManfi"
                         style="
-                          width: 70px;
+                          width: 50px;
                           border: 0px;
                           --darkreader-inline-border-top: 0px;
                           --darkreader-inline-border-right: 0px;
@@ -376,38 +401,57 @@
                   <br />
 
                   <div
-                    style="
-                      background-color: rgb(231, 231, 231);
-                      padding: 5px;
-                      --darkreader-inline-bgcolor: #26292a;
-                    "
+                    style="padding: 5px; --darkreader-inline-bgcolor: #26292a"
                     data-darkreader-inline-bgcolor=""
                   >
-                    <div style="margin-bottom: 5px">
-                      وضعیت پاسخگویی به سوالات:
+                    <div
+                      class="d-flex mb-3 align-items-center justify-content-between"
+                    >
+                      <div>وضعیت پاسخگویی به سوالات:</div>
+                      <div class="d-flex gap-2">
+                        <button class="ctrl-btn bg-secondary pro-next">
+                          &#11166;
+                        </button>
+                        <button class="ctrl-btn bg-secondary pro-prev">
+                          &#11164;
+                        </button>
+                      </div>
                     </div>
                     <div class="slider" id="slider">
                       <div class="slide" id="slide">
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="1">1</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              data-question_num="1"
+                              >1</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">2</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >2</span
+                            >
                           </div>
                           <div
                             style="
@@ -419,29 +463,42 @@
                             data-darkreader-inline-bgcolor=""
                             data-darkreader-inline-color=""
                           >
-                            -
+                            <i class="btn-close"></i>
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="2">2</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="2"
+                              >2</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
@@ -453,29 +510,42 @@
                             data-darkreader-inline-bgcolor=""
                             data-darkreader-inline-color=""
                           >
-                            -
+                            <i class="btn-close"></i>
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="3">3</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="3"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
@@ -490,31 +560,43 @@
                             -
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="4">4</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="4"
+                              >4</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: yellow;
-                              color: yellow;
                               --darkreader-inline-bgcolor: #999900;
                               --darkreader-inline-color: #ffff1a;
                             "
@@ -524,31 +606,43 @@
                             -
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="5">5</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="5"
+                              >5</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">2</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >2</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: yellow;
-                              color: yellow;
                               --darkreader-inline-bgcolor: #999900;
                               --darkreader-inline-color: #ffff1a;
                             "
@@ -558,31 +652,43 @@
                             -
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="6">6</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="6"
+                              >6</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: yellow;
-                              color: yellow;
                               --darkreader-inline-bgcolor: #999900;
                               --darkreader-inline-color: #ffff1a;
                             "
@@ -592,26 +698,39 @@
                             -
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="7">7</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="7"
+                              >7</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
@@ -623,34 +742,46 @@
                             data-darkreader-inline-bgcolor=""
                             data-darkreader-inline-color=""
                           >
-                            -
+                            <i class="btn-close text-white"></i>
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="8">8</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="8"
+                              >8</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">3</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >3</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: yellow;
-                              color: yellow;
                               --darkreader-inline-bgcolor: #999900;
                               --darkreader-inline-color: #ffff1a;
                             "
@@ -660,26 +791,38 @@
                             -
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="9">9</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="9"
+                              >9</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success"></span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                            ></span>
                           </div>
                           <div
                             style="
@@ -691,29 +834,42 @@
                             data-darkreader-inline-bgcolor=""
                             data-darkreader-inline-color=""
                           >
-                            -
+                            <i class="btn-close"></i>
                           </div>
                         </div>
-                        <div class="Box item">
+                        <div class="Box item col-1 text-center">
                           <div
                             style="
                               background-color: white;
                               --darkreader-inline-bgcolor: #181a1b;
+                              font-size: 13px;
+                              padding: 5px 3px;
                             "
                             class="ShowAnswer"
                             data-darkreader-inline-bgcolor=""
                           >
                             سوال
-                            <span class="blue" data-question_num="10">10</span>
+                            <span
+                              class="blue"
+                              style="font-size: 14px"
+                              data-question_num="10"
+                              >10</span
+                            >
                           </div>
                           <div
                             style="
                               background-color: rgb(231, 231, 231);
                               --darkreader-inline-bgcolor: #26292a;
+                              font-size: 14px;
+                              padding: 5px 3px;
                             "
                             data-darkreader-inline-bgcolor=""
                           >
-                            گزینه:<span class="text-success">1</span>
+                            گزینه:<span
+                              style="font-size: 14px; padding: 0 5px 0 0"
+                              class="text-success"
+                              >1</span
+                            >
                           </div>
                           <div
                             style="
@@ -725,24 +881,27 @@
                             data-darkreader-inline-bgcolor=""
                             data-darkreader-inline-color=""
                           >
-                            -
+                            <i class="btn-close"></i>
                           </div>
                         </div>
                       </div>
-                      <button class="ctrl-btn pro-prev">&gt;</button>
-                      <button class="ctrl-btn pro-next">&lt;</button>
                     </div>
                   </div>
-                  <br />
-                  <div class="alert text-center titr" role="alert">
+                </section>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-profile"
+                role="tabpanel"
+                aria-labelledby="pills-profile-tab"
+              >
+                <section id="plan-2" class="mb-4">
+                  <div class="alert alert-info mb-2 text-center" role="alert">
                     دانلود سوالات و پر کردن پاسخبرگ آزمون
                   </div>
-                  <br />
 
                   <div
                     style="
-                      background-color: rgb(231, 231, 231);
-                      border: 1px solid cyan;
                       text-align: center;
                       padding: 10px;
                       --darkreader-inline-bgcolor: #26292a;
@@ -761,8 +920,6 @@
                   </div>
                   <div
                     style="
-                      background-color: rgb(231, 231, 231);
-                      border: 1px solid cyan;
                       text-align: center;
                       padding: 10px;
                       --darkreader-inline-bgcolor: #26292a;
@@ -789,16 +946,8 @@
                       >دانلود سوالات تیزهوشان ششم(کلیک)</a
                     >
                   </div>
-                </section>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="pills-profile"
-                role="tabpanel"
-                aria-labelledby="pills-profile-tab"
-              >
-                <section id="plan-2">
-                  <div>
+                  <br />
+                  <div style="text-align: justify">
                     <h5 style="font-weight: bold">پاسخبرگ آزمون</h5>
                     پس از دانلود سوالات ، برای هر سوال پاسخ صحیح خود را در
                     پاسخبرگ آزمون وارد کنید در وارد کردند گزینه صحیح دقت لازم را
@@ -806,34 +955,50 @@
                     کنید
                   </div>
                   <br />
-                  <div
+                  <div class="mb-3"
                     style="
                       display: flex;
                       justify-content: space-between;
-                      margin-bottom: -10px;
                     "
                   >
-                    <div
-                      class="alert text-center titr"
-                      style="padding: 0px 10px; border-radius: 5px"
-                    >
-                      سوال
+                    <div class="col-2">
+                      <div
+                        class="alert d-flex justify-content-center align-items-center text-center titr mb-0 h-100"
+                        style="
+                          padding:5px;
+                          border-radius: 5px;
+                          font-size: 13px;
+                          align-self: stretch;
+                        "
+                      >
+                        سوال
+                      </div>
                     </div>
-                    <div
-                      class="alert text-center titr"
-                      style="padding: 0px 42px; border-radius: 5px"
-                    >
-                      بر روی گزینه پاسخ کلیک کنید
+                    <div class="col-8 px-1">
+                      <div
+                        class="alert d-flex justify-content-center align-items-center text-center titr mb-0 h-100"
+                        style="
+                          padding: 5px;
+                          font-size: 14px;
+                          border-radius: 5px;
+                          align-self: stretch;
+                        "
+                      >
+                        بر روی گزینه پاسخ کلیک کنید
+                      </div>
                     </div>
-                    <div
-                      class="alert text-center titr"
-                      style="
-                        padding: 5px 2px;
-                        border-radius: 5px;
-                        font-size: 9px;
-                      "
-                    >
-                      تکنیک ضربدر و منفی
+                    <div class="col-2">
+                      <div
+                        class="alert d-flex justify-content-center align-items-center text-center titr mb-0 h-100"
+                        style="
+                          align-self: stretch;
+                          padding: 8px 2px;
+                          border-radius: 5px;
+                          font-size: 9px;
+                        "
+                      >
+                        تکنیک ضربدر و منفی
+                      </div>
                     </div>
                   </div>
 
@@ -916,7 +1081,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1002,7 +1167,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1088,7 +1253,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1174,7 +1339,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Warning btn-sm IsManfi"
+                        class="btn Btn-Warning btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1260,7 +1425,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Warning btn-sm IsManfi"
+                        class="btn Btn-Warning btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1346,7 +1511,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Warning btn-sm IsManfi"
+                        class="btn Btn-Warning btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1432,7 +1597,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1518,7 +1683,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Warning btn-sm IsManfi"
+                        class="btn Btn-Warning btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1604,7 +1769,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1690,7 +1855,7 @@
                       </button>
                       <button
                         type="button"
-                        class="btn Btn-Default btn-sm IsManfi"
+                        class="btn Btn-Default btn-sm text-black IsManfi"
                         data-cs="IsManfi"
                       >
                         <i>-</i>
@@ -1701,18 +1866,17 @@
               </div>
             </div>
           </section>
-          <br />
         </div>
       </div>
 
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col"></div>
-          <div class="col">
+          <div class="px-0">
             <a
               href="http://tizhooshan.kanoon.shop/Student/Exam/Index/14030503?key=qEs0f9"
               style="width: inherit"
-              class="btn btn-info"
+              class="btn w-100 d-block btn-success"
               >پایان آزمون</a
             >
           </div>
@@ -1725,39 +1889,61 @@
     <script src="./assets/boootsrap.js.download"></script>
     <script src="./assets/myJs.js.download"></script>
     <script>
-      function startTimer(duration, display) {
-        var timer = duration,
+      function startTimer(TIME_MINUTES, duration, display) {
+        var timer = 1,
           minutes,
           seconds;
-        setInterval(function () {
-          minutes = parseInt(timer / 60, 10);
-          seconds = parseInt(timer % 60, 10);
+        let myInterval = setInterval(function () {
+          minutes = Math.floor(timer / 60);
+          if (minutes < 1) {
+            display.textContent = timer;
+            $("#min-lbl").text("ثانیه");
+          } else {
+            $("#min-lbl").text("دقیقه");
+            display.textContent = minutes;
+          }
 
-          minutes = minutes < 10 ? minutes : minutes;
+          // seconds = parseInt(timer % 60, 10);
+
+          // minutes = minutes < 10 ? minutes : minutes;
           // seconds = seconds < 10 ? "0" + seconds : seconds;
 
-          display.textContent = 10 - minutes; //+ ":" + seconds;
+          //+ ":" + seconds;
           let progressPercentage = display.textContent * 100;
 
-          $("#MinProgress").css("width", progressPercentage / 10 + "%");
           $("#progress-slice div").each(function (index) {
-            console.log(index, minutes);
-            if (index + 1 > minutes) $(this).removeClass("border-gray");
+            if (index + 1 === minutes / 10) {
+              $(this).removeClass("border-gray");
+              $("#MinProgress").css(
+                "width",
+                progressPercentage / TIME_MINUTES + "%"
+              );
+            }
           });
-          if (--timer < 0) {
+          if (timer++ === duration) {
             timer = duration;
+            console.log(timer);
+            clearInterval(myInterval);
             alert("وقت آزمون شما به پایان رسیده است");
-            return (window.location.href =
-              "/Student/Exam/Index/14030503?key=qEs0f9");
+            // return (window.location.href =
+            //   "/Student/Exam/Index/14030503?key=qEs0f9");
           }
         }, 1000);
       }
 
       window.onload = function () {
+        const TIME_MINUTES = 30;
+        $("#exam-time").text(`${TIME_MINUTES}`);
         $("#MinProgress").attr("aria-valuemax", 300);
-        var fiveMinutes = 60 * 10,
+        var duration = TIME_MINUTES * 60,
           display = document.querySelector("#Min");
-        startTimer(fiveMinutes, display);
+
+        const integerMinutes = Math.floor(TIME_MINUTES / 10);
+        let divs = new Array(integerMinutes)
+          .fill(`<div class="border-end w-100 border-white border-gray"></div>`)
+          .join("");
+        $("#progress-slice").append(divs);
+        startTimer(TIME_MINUTES, duration, display);
       };
       let TestDate = "14030503";
       let QuestioNO = 1;
